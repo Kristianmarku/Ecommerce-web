@@ -1,0 +1,543 @@
+body {
+    background: url(wallpaper.png) no-repeat center center fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Ranchers',sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(224, 242, 247, 0.7);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color: rgba(202, 230, 238, 0.3);
+    padding: 10px 0 10px 0;
+}
+
+.navbar img {
+    height: 42px;
+    padding: 10px 40px 0px 0px;
+}
+
+
+.slider {
+    display: flex;
+    justify-content: center;
+}
+
+.slider img{
+    width: 100%;
+
+}
+
+ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+a {
+    color: #2ba6cb;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.navbar a:hover {
+    box-shadow: inset 0px -5px 0px #2ba6cb;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome .row {
+    width: 100%;
+    height: 10rem;
+    background: #CFDBF0;
+    margin: 10px 10px 0 10px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #38525a;
+}
+
+.featured {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 0 10px;
+    gap: 10px;
+}
+
+.featured .column {
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.featured .column:hover {
+    background-color: rgba(56, 82, 90, 0.1);
+    box-shadow: 0px 0px 5px #38525a;
+    cursor: pointer;
+}
+
+.featured .column:nth-child(1) {
+    width: 10;
+}
+
+.featured .column:nth-child(2) {
+    width: 10;
+}
+
+.featured .column:nth-child(3) {
+    width: 10;
+}
+
+.featured .column h1, p {
+    color: #38525a ;
+}
+
+.featured .column h1 {
+    letter-spacing: 1.5px;
+    padding-left: 20px;
+}
+
+.featured .column p {
+    font-family: sans-serif;
+    font-weight: 600;
+    width: 90%;
+}
+
+.featured button {
+    margin-left: 20px;
+}
+
+button {
+    margin-left: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #38525a;
+    border-radius: 20px;
+    background-color: #2ba6cb;
+    box-shadow: inset 0px 2px 2px#cae6ee;
+    font-family:'Ranchers',sans-serif;
+    font-size: 20px;
+    color: #fff;
+    transition: all .2s ease-in;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #38525a ;
+    box-shadow: inset 0px -50px 2px#cae6ee;
+}
+
+.footer {
+    padding: 20px 0 0 0;
+}
+
+hr{
+    border: 1px solid #fff;
+    margin: 0 10px 0 10px;
+}
+
+.socials {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.socials .media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.socials .media a:hover {
+    color: #3d3d3d;
+    transform: scale(1.2);
+}
+
+
+.credits {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* Shop Page Stylig  */
+
+.header {
+    width: 100%;
+    height: 100%;
+}
+
+.header h1 {
+    padding: 0 0 10px 20px;
+    font-size: 50px;
+    color: #38525a;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-family: sans-serif;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.products {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.products .item {
+    width: 240px;
+    height: 320px;
+    transition: all .3s ease-in-out;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.products .item:hover {
+    transform: scale(0.95);
+}
+
+.products .item p {
+    color: #38525a ;
+    padding-left: 10px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.item-thumbnail img {
+    width: 100%;
+}
+
+.item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+/* Product Page Stylig  */
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-column {
+    width: 500px;
+    height: 500px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.product-column img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.product-column h1, p {
+    padding-left: 20px;
+}
+
+.product-column h1 {
+    color: #38525a;
+    letter-spacing: 2px;
+}
+
+.product-column p {
+    font-size: 25px;
+}
+
+.product-column .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.product-column .input-group label{
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #3d3d3d;
+}
+
+.product-column .input-group select {
+    border: 1px solid #2ba6cb;
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.product-column .input-group select:focus {
+   outline: none;
+}
+
+.product-info h1 {
+    padding-left: 20px;
+    color: #38525a;
+}
+
+.product-info .columns {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-info .info {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #3d3d3d;
+    transition: all .2s ease-in-out;
+}
+
+.product-info ul{
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.product-info .info:hover {
+    background-color: #2ba6cba4;
+    color: #fff;
+}
+
+.info-active {
+    transition: all .2s ease-in-out;
+    cursor: default !important;
+    background-color: #fff;
+    border: 1px solid #52525241;
+    border-top: 5px solid #2ba6cb;
+}
+
+.info-active:hover {
+    background-color: #fff !important;
+    color: #38525a !important;
+}
+
+.info-desc p{
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+#specs-desc {
+    display: none;
+}
+
+#reviews-desc {
+    display: none;
+}
+
+
+
+/* Shop Page Stylig  */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin: 150px 0 150px 0;
+}
+
+.login-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    width: 50%;
+    height: 500px;
+}
+
+.login-body h1 {
+    color: #38525a;
+}
+
+.login-body #error {
+    display: none;
+    color: #fa6060;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.login-body button {
+    margin-top: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group input {
+    width: 300px;
+    height: 40px;
+    padding: 20px;
+    border: none;
+    box-shadow: inset 0 0 0 #2ba6cb;
+    font-size: 15px;
+    transition: all .3s ease-in-out;
+    background: #2ba6cb34;
+    font-family: sans-serif;
+    font-weight: 600;
+    color: #38525a;
+    border-radius: 50px;
+}
+
+.input-group input:focus {
+    outline: none;
+    box-shadow: inset 0 -2px 0 #2ba6cb;
+}
+
+
+
+
+/* Responsive Styling*/
+
+@media only screen and (max-width: 1970px) {
+    .featured .column h1 {
+        font-size: 20px;
+    }
+
+    .featured .column p {
+        font-size: 12px;
+    }
+
+    .product-column  {
+        width: 450px;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 300px) {
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .product-column  {
+        height: 250px;
+        width: 150px;
+    }
+
+    .product-column h1{
+        font-size: 12px;
+    }
+
+    .product-column .input-group label{
+        font-size: 8px;
+    }
+
+    .product-column .input-group select{
+        width: 100px;
+        height: 20px;
+    }
+    
+    .product-column p{
+        font-size: 12px;
+    }
+
+    .product-column button{
+        font-size: 12px;
+        width: 100px !important;
+        height: 20px;
+    }
+}
+
+@media only screen and (min-width: 1470px) {
+    .welcome .row h1 {
+        font-size: 40px;
+    }
+
+    .product-column  {
+        height: 350px;
+        width: 350px;
+    }
+
+    .product-column h1{
+        font-size: 20px;
+    }
+
+    .product-column .input-group label{
+        font-size: 15px;
+    }
+
+    .product-column .input-group select{
+        width: 100px;
+        height: 40px;
+    }
+    
+    .product-column p{
+        font-size: 20px;
+    }
+
+    .product-column button{
+        font-size: 12px;
+        width: 100px !important;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 1470px) {
+    .welcome .row h1 {
+        font-size: 30px;
+    }
+
+    .welcome .row {
+        height: 55px;
+    }
+
+    .navbar ul {
+        font-size: 12px;
+        gap: 0px;
+    }
+
+    .navbar img {
+        height: 30px;
+    }
+}
+
+@media only screen and (max-width: 1970px) {
+    .featured .column {
+        height: 200px;
+    }
+}
