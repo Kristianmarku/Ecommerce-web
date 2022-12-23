@@ -29,14 +29,14 @@ body {
 }
 
 
-.slider {
+.slider-container {
     display: flex;
     justify-content: center;
 }
 
-.slider img{
+.slider-container img{
     width: 100%;
-
+    transition: 0.3s opacity ease-in-out;
 }
 
 ul {

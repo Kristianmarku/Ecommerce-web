@@ -1,21 +1,39 @@
 /* Login Validation */
-
-
 function login()
 {
-    var email = document.getElementById('userEmail').value;
-    var pass = document.getElementById('userPass').value;
     var errorMsg = document.getElementById('error')
 
-    if(email == "" || email == null, pass == "" || pass == null)
-    {
+    var emailRegex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/; 
+    var passRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    var email = document.getElementById('userEmail').value;
+    var pass = document.getElementById('userPass').value;
+
+    
+    if(emailRegex.test(email)){
+        alert('Logged in! Not really :p');
+    }else if (passRegex.test(pass)){
+        alert('Logged in! Not really :p');
+    } else {
         errorMsg.style.display = 'block';
         setTimeout(() => {
             errorMsg.style.display = 'none';
         }, 3000);
     }
 
+    // var email = document.getElementById('userEmail').value;
+    // var pass = document.getElementById('userPass').value;
+
+    // if(email == "" || email == null, pass == "" || pass == null)
+    // {
+    //     errorMsg.style.display = 'block';
+    //     setTimeout(() => {
+    //         errorMsg.style.display = 'none';
+    //     }, 3000);
+    // }
+
 }
+
 
 /* Product Page */
 var overview = document.getElementById('overview');
