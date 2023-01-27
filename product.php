@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Little Ones - Product</title>
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-    <div class="wrapper">
-        <div class="navbar">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/shop.html">Shop</a></li>
-                <li><a href="/product.html">Product</a></li>
-                <li><a href="/signin.html">Signin/Signup</a></li>
-            </ul>
-            <img src="images/logo.png">
-        </div>
-        <div class="main">
+<?PHP 
+    include('config/app.php');
+    include('layout/header.php');
+    include('layout/navbar.php');
+?>
             <div class="header">
                 <h1>Product Name</h1>
             </div>
@@ -87,32 +67,7 @@
                 </div>
             </div>
 
-
             </div>
-            <div class="footer">
-                <hr>
-                <div class="socials">
-                    <div class="media">
-                        <a href="https://www.instagram.com/kristiaanmarku">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                    <div class="media">
-                        <a href="https://www.facebook.com/kristiannmarku">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                    </div>
-                    <div class="media">
-                        <a href="https://www.linkedin.com/in/kristianmarku/">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="credits">
-                    <p>2022 &copy; Developed by <a href="www.crispy-code.com">CrispyCode</a> </p>
-                </div>
-            </div>
-        </div>
-    <script src="js/app.js"></script>
-</body>
-</html>
+<?PHP 
+    include('layout/footer.php')
+?>  
