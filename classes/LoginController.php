@@ -1,6 +1,7 @@
 <?php 
+session_start();
 class LoginController extends Login{
-    private $username, $password;
+    private $username, $password; 
 
     public function __construct($username, $password)
     {
@@ -10,7 +11,8 @@ class LoginController extends Login{
 
     public function loginUser(){
         if($this->emptyInput() == false){
-            header("Location: ../signin.php?error=emptyinput");
+            $_SESSION['flash_message'] = 'All fields are required!';
+            header("Location: ../signin.php");
             exit();
         }
         

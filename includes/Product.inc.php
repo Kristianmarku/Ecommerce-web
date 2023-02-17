@@ -17,7 +17,8 @@ if(isset($_POST["submit"]))
     $product->createProduct();
 
     // Going to back to front page 
-    header("Location: ../add-product.php?product=added");
+    $_SESSION['flash_message'] = 'Product added!';
+    header("Location: ../add-product.php");
 }
 
 if(isset($_POST['deleteBtn'])){

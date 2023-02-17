@@ -14,6 +14,16 @@
                     <input name="password" type="password" placeholder="Enter Password"/>
                     <input name="confirm_password" type="password" placeholder="Confirm Password"/>
                 </div>
+                <div>
+                  <p style="color: red;">
+                  <?php 
+                      if(isset($_SESSION['flash_message'])){
+                        print $_SESSION['flash_message'];
+                        unset($_SESSION['flash_message']);
+                      }
+                  ?>
+                  </p>
+                </div>
                 <div class="form-btn">
                     <button name="submit" type="submit">Register</button>
                 </div>

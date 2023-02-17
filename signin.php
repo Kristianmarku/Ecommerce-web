@@ -12,6 +12,16 @@
                 <input name="username" type="text" placeholder="Enter Email or Username" />
                 <input name="password" type="password" placeholder="Enter Password"/>
               </div>
+              <div>
+                  <p style="color: red;">
+                  <?php 
+                      if(isset($_SESSION['flash_message'])){
+                        print $_SESSION['flash_message'];
+                        unset($_SESSION['flash_message']);
+                      }
+                  ?>
+                  </p>
+                </div>
               <div class="form-btn">
                 <button name="submit" type="submit">Login</button>
               </div>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class Register extends DB 
 {
     protected function setUser($username, $password, $email) {
@@ -8,9 +9,9 @@ class Register extends DB
 
         if(!$stmt->execute(array($username, $hashedPwd, $email))){
             $stmt = null;   
-            header("Location: ../register.php?error=stmtfailed");
-            exit(); 
-        }
+            $_SESSION['flash_message'] = 'There was an error with your registration';
+            header("Location: ../signup.php");
+        } 
             $stmt = null;
     }
 
@@ -19,7 +20,8 @@ class Register extends DB
 
         if(!$stmt->execute(array($username, $email))){
             $stmt = null;   
-            header("Location: ../register.php?error=stmtfailed");
+            $_SESSION['flash_message'] = 'There was an error with your registration';
+            header("Location: ../signup.php");
             exit();
         }
 

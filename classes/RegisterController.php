@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 class RegisterController extends Register{
     private $username, $email, $password, $password_confirm;
 
@@ -12,23 +14,28 @@ class RegisterController extends Register{
 
     public function registerUser(){
         if($this->emptyInput() == false){
-            header("Location: ../register.php?error=emptyinput");
+            $_SESSION['flash_message'] = 'All fields are required!';
+            header("Location: ../signup.php");
             exit();
         }
         if($this->invalidUsername() == false){
-            header("Location: ../register.php?error=username");
+            $_SESSION['flash_message'] = 'Invalid Username!';
+            header("Location: ../signup.php");
             exit();
         }
         if($this->invalidEmail() == false){
-            header("Location: ../register.php?error=email");
+            $_SESSION['flash_message'] = 'Invalid Email!';
+            header("Location: ../signup.php");
             exit();
         }
         if($this->pwdMatch() == false){
-            header("Location: ../register.php?error=passwordmatch");
+            $_SESSION['flash_message'] = 'Passwords not matching!';
+            header("Location: ../signup.php");
             exit();
         }
         if($this->usernameTakenCheck() == false){
-            header("Location: ../register.php?error=userOrEmailTaken");
+            $_SESSION['flash_message'] = 'Username or Email already taken!';
+            header("Location: ../signup.php");
             exit();
         }
         

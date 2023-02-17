@@ -1,5 +1,4 @@
 <?php 
-
 class Product extends Db
 {
     protected function setProduct($name, $quantity, $price){
@@ -7,7 +6,8 @@ class Product extends Db
 
         if(!$stmt->execute(array($name, $quantity, $price))){
             $stmt = null;
-            header("Location: ../add-product.php?error=stmtfailed");
+            $_SESSION['flash_message'] = 'There was an error while adding a product!';
+            header("Location: ../add-product.php");
             exit(); 
         }
         $stmt = null;
@@ -19,23 +19,17 @@ class Product extends Db
         return $stmt;
     }
 
-    // // If we have user input i.e search form    
-    // public function getProductsStmt($name){
-    //     $sql = "SELECT * FROM products WHERE name = ?";
-    //     $stmt = $this->connect()->prepare($sql);
-    //     $stmt->execute([$name]);
-    //     $products = $stmt->fetchAll();
-    // }
-
     public function deleteProduct($id){
            $sql = "DELETE FROM products WHERE id = ?";
            $stmt = $this->connect()->prepare($sql);
            $stmt->execute([$id]);
             if(!$stmt->execute([$id])){
-                header("Location: ../shop.php?error=somethingWentWrong");
+                $_SESSION['flash_message'] = 'There was an error while adding a product!';
+                header("Location: ../add-product.php");
                 exit();
             }else{
-                header("Location: ../shop.php?product=deleted");
+                $_SESSION['flash_message'] = 'Product deleted!';
+                header("Location: ../add-product.php");
                 exit();
             }
     }

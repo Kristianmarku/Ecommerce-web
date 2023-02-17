@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class ProductController extends Product 
 {
     private $name, $quantity, $price;
@@ -11,7 +12,8 @@ class ProductController extends Product
 
     public function createProduct(){
         if($this->emptyInput() == false){
-            header("Location: ../add-product.php?error=emptyinput");
+            $_SESSION['flash_message'] = 'There was an error while adding a product!';
+            header("Location: ../add-product.php");
             exit();
         }
 
