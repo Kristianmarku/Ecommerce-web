@@ -44,15 +44,25 @@
 
                       
                         <div style="display: flex">
-                            <button>Purchase</button>
+                            <a href="
+                                <?php 
+                                    if(!isset($_SESSION["userid"])){
+                                        print base_url('signin.php');
+                                    }
+                                ?>
+                            ">
+                                <button>Purchase</button>
+                            </a>
                             <?php 
-                                if($_SESSION['roles_id'] == 2){
+                                if(isset($_SESSION["userid"])){
+                                    if($_SESSION['roles_id'] == 2){
                             ?>
                             <form action="includes/Product.inc.php" method="POST">
                                 <input name="productId" type="hidden" value="<?php echo $row['id'] ?>">
                                 <button name="deleteBtn" style="background-color: red;">Delete</button>
                             </form>
                             <?php 
+                                    }
                                 }
                             ?>
                         </div>

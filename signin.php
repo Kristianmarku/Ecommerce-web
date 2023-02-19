@@ -7,6 +7,15 @@
           <div class="login-body">
             <h1>Welcome back!</h1>
 
+            <?php 
+                if(isset($_SESSION['flash_message'])){
+                    print '<p style="color: green;">';
+                    print $_SESSION['flash_message'];
+                    print  '</p>';
+                    unset($_SESSION['flash_message']);
+                    }
+            ?>
+
             <form action="includes/Login.inc.php" method="POST">
               <div class="input-group">
                 <input name="username" type="text" placeholder="Enter Email or Username" />

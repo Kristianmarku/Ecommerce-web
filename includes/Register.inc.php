@@ -17,6 +17,7 @@ if(isset($_POST["submit"]))
     // Running error handlers and user register 
     $register->registerUser();
 
-    // Going to back to front page 
-    header("Location: ../signin.php?registered-successfully");
+    // Going to back to front page  
+    $_SESSION['flash_message'] = "You've successfully registered!";
+    header("Location: ../signin.php");
 }

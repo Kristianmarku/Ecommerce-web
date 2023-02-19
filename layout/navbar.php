@@ -6,7 +6,8 @@
         <ul>
             <li><a href="<?= base_url('index.php')  ?>">Home</a></li>
             <li><a href="<?= base_url('shop.php')  ?>">Shop</a></li>
-            <!-- <li><a href="<?= base_url('product.php')  ?>">Product</a></li> -->
+            <li><a href="<?= base_url('contact.php')  ?>">Contact</a></li>
+            <!-- <li><a href="?= base_url('product.php')  ?>">Product</a></li> -->
             <?PHP 
                 if(isset($_SESSION["userid"]))
                 {
