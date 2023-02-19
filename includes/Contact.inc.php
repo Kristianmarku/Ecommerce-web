@@ -6,8 +6,6 @@ include "../classes/ContactController.php";
 
 if(isset($_POST["submit"]))
 {
-    header("Location: ../contact.php?redirect-successs");
-
     // Grabbing the data
     $email = $_POST['email'];
     $message = $_POST['message'];
