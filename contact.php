@@ -14,12 +14,20 @@
 
             <div class="contact-form">
                 <div class="contact-body">
-                    <form action="">
+                        <?php 
+                            if(isset($_SESSION['flash_message'])){
+                                print '<p style="color: red;">';
+                                print $_SESSION['flash_message'];
+                                print  '</p>';
+                                unset($_SESSION['flash_message']);
+                            }
+                        ?>
+                    <form action="includes/Contact.inc.php" method="POST">
                         <div class="input-group">
                             <input name="email" type="text" placeholder="E-mail">
                             <textarea name="message" type="text" placeholder="Message here..." style="margin-bottom: 10px"></textarea>
                         </div>
-                        <button>Send</button>
+                        <button name="submit" type="submit">Send</button>
                     </form>
                 </div>
             </div>

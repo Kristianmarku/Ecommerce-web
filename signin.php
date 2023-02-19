@@ -9,7 +9,7 @@
 
             <?php 
                 if(isset($_SESSION['flash_message'])){
-                    print '<p style="color: green;">';
+                    print '<p style="color: red;">';
                     print $_SESSION['flash_message'];
                     print  '</p>';
                     unset($_SESSION['flash_message']);

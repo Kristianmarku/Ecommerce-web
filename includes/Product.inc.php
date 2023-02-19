@@ -6,7 +6,7 @@ include "../classes/ProductController.php";
 if(isset($_POST["submit"]))
 {
     // Grabbing the data
-    $name = $_POST['name'];
+    $name = $_POST['name']; 
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
 

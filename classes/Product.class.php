@@ -24,12 +24,12 @@ class Product extends Db
            $stmt = $this->connect()->prepare($sql);
            $stmt->execute([$id]);
             if(!$stmt->execute([$id])){
-                $_SESSION['flash_message'] = 'There was an error while adding a product!';
-                header("Location: ../add-product.php");
+                $_SESSION['flash_message'] = 'There was an error while deleting a product!';
+                header("Location: ../shop.php");
                 exit();
             }else{
                 $_SESSION['flash_message'] = 'Product deleted!';
-                header("Location: ../add-product.php");
+                header("Location: ../shop.php");
                 exit();
             }
     }
