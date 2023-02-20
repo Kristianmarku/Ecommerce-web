@@ -504,10 +504,6 @@ textarea:focus {
   color: #fff;
 }
 
-.order-table tbody tr:nth-child(even) {
-  background-color: #2ba6cb;
-}
-
 .order-table tbody tr:hover {
   background-color: #2ba6cb;
   color: #fff;

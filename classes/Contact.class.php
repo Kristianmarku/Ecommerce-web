@@ -27,11 +27,11 @@ class Contact extends Db
            $stmt->execute([$id]);
             if(!$stmt->execute([$id])){
                 $_SESSION['flash_message'] = 'There was an error while deleting a contact!';
-                header("Location: ../contact.php");
+                header("Location: ../dashboard.php");
                 exit();
             }else{
-                $_SESSION['flash_message'] = 'Product deleted!';
-                header("Location: ../contact.php");
+                $_SESSION['flash_message'] = 'Contact deleted!';
+                header("Location: ../dashboard.php");
                 exit();
             }
     }

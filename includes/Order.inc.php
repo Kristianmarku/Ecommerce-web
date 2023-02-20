@@ -21,3 +21,9 @@ if(isset($_POST["submit"]))
     $_SESSION['flash_message'] = 'Product has been ordered!';
     header("Location: ../shop.php?");
 }
+
+if(isset($_POST['deleteBtn'])){
+    $id = $_POST['orderId'];
+    $order = new Order();
+    $order->deleteOrder($id);
+}

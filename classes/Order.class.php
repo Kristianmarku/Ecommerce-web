@@ -28,4 +28,19 @@ class Order extends Db
         $stmt = $this->connect()->query($sql);
         return $stmt;
     }
+
+    public function deleteOrder($id){
+        $sql = "DELETE FROM orders WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+         if(!$stmt->execute([$id])){
+             $_SESSION['flash_message'] = 'There was an error while deleting an order!';
+             header("Location: ../dashboard.php");
+             exit();
+         }else{
+             $_SESSION['flash_message'] = 'Order deleted!';
+             header("Location: ../dashboard.php");
+             exit();
+         }
+ }
 }

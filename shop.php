@@ -8,12 +8,14 @@
             <div class="header">
                 <h1>A few clicks is all it takes</h1>
                 <p>Only the best material for your kid. Everything a kid needs! </p>
-                <button id="myOrders" onclick="handleMyOrders()" style="margin-bottom: 15px; margin-left: 15px">My Orders</button>
+                <?php if($_SESSION["roles_id"] != 2){ ?>
+                    <button id="myOrders" style="margin-bottom: 15px; margin-left: 15px">My Orders</button>
+                <?php } ?>
 
                 <?php 
                 if(isset($_SESSION['flash_message'])){
                     print '<p style="color: red;">';
-                    print $_SESSION['flash_message'];
+                    print $_SESSION['flash_message'];   
                     print  '</p>';
                     unset($_SESSION['flash_message']);
                     }
@@ -54,21 +56,20 @@
 
                       
                         <div style="display: flex">
-                            <a href="
-                                <?php 
-                                    if(!isset($_SESSION["userid"])){
-                                        print base_url('signin.php');
-                                    }
-                                ?>
-                            ">
+                            <?php if(isset($_SESSION["userid"])){ ?>
                                 <form action="includes/Order.inc.php" method="POST">
                                     <input name="user_id" type="hidden" value="<?php echo $_SESSION["userid"] ?>" >
                                     <input name="product_id" type="hidden" value="<?php echo $row['id'] ?>">
                                     <input name="product_name" type="hidden" value="<?php echo $row['name'] ?>">
+                                    <?php if($_SESSION["roles_id"] != 2){ ?>
                                     <button name="submit" type="submit">Purchase</button>
+                                    <?php } ?>
                                 </form>
-                            </a>
-                            <?php 
+                            <?php }else{ ?> 
+                                <a href="<?php base_url('signin.php') ?>">
+                                    <button name="submit" type="submit">Signin</button>
+                                </a>
+                            <?php } 
                                 if(isset($_SESSION["userid"])){
                                     if($_SESSION["roles_id"] == 2){
                             ?>

@@ -19,7 +19,7 @@
             <input name="name" type="text" placeholder="Product Name">
             <input name="quantity" type="number" placeholder="Product Quantity">
             <input name="price" type="number" placeholder="Product Price">
-            <button type="submit" name="submit">Save</button>
+            <button type="submit" name="submit">Add</button>
     </div>
 </form>
     

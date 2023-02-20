@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 class Register extends DB 
 {
     protected function setUser($username, $password, $email) {
@@ -33,5 +33,27 @@ class Register extends DB
         }
         return $resultCheck;
 
+    }
+
+    public function deleteUser($id){
+        $sql = "DELETE FROM users WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+         if(!$stmt->execute([$id])){
+             $_SESSION['flash_message'] = 'There was an error while deleting a user!';
+             header("Location: ../dashboard.php");
+             exit();
+         }else{
+             $_SESSION['flash_message'] = 'User deleted!';
+             header("Location: ../dashboard.php");
+             exit();
+         }
+ }
+
+    public function getUsers()
+    {
+        $sql = "SELECT * FROM users";
+        $stmt = $this->connect()->query($sql);
+        return $stmt;
     }
 }

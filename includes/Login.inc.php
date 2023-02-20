@@ -16,5 +16,9 @@ if(isset($_POST["submit"]))
     $login->loginUser();
 
     // Going to back to front page 
-    header("Location: ../index.php?logged=in");
+    if($_SESSION["roles_id"] == 2){
+        header("Location: ../dashboard.php?logged=in");
+    }else{
+        header("Location: ../index.php?logged=in");
+    }
 }
