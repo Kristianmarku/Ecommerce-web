@@ -48,8 +48,9 @@ class Login extends DB
 
             $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $_SESSION["userid"] = $user[0]["id"];
-            $_SESSION["username"] = $user[0]["username"];
             $_SESSION["roles_id"] = $user[0]["roles_id"];
+            $_SESSION["username"] = $user[0]["username"];
+            $_SESSION["email"] = $user[0]["email"];
         }
 
         $stmt = null;

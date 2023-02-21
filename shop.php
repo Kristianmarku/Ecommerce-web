@@ -8,7 +8,7 @@
             <div class="header">
                 <h1>A few clicks is all it takes</h1>
                 <p>Only the best material for your kid. Everything a kid needs! </p>
-                <?php if($_SESSION["roles_id"] != 2){ ?>
+                <?php if(isset($_SESSION["roles_id"]) && $_SESSION["roles_id"] != 2){ ?>
                     <button id="myOrders" style="margin-bottom: 15px; margin-left: 15px">My Orders</button>
                 <?php } ?>
 
@@ -96,6 +96,7 @@
                         <tr>
                             <th>Product</th>
                             <th>Order Date</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -108,6 +109,12 @@
                         <tr>
                             <td><?php echo $row['product_id'] ?> : <?php echo $row['product_name']  ?> </td>
                             <td><?php echo $row['ordered_at'] ?></td>
+                            <td>
+                                <form action="includes/Order.inc.php" method="POST">
+                                    <input name="orderId" type="hidden" value="<?php echo $row['id'] ?>">
+                                    <button name="deleteBtn" style="background-color: #FF2664;">Cancel</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php 
                         }

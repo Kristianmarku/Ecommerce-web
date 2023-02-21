@@ -5,9 +5,9 @@
     include('layout/navbar.php');
 ?>
 
-<form action="includes/Product.inc.php" method="POST">
+<form action="includes/Profile.inc.php" method="POST">
     <div class="add-product-form">
-            <h3>Add a Product</h3>
+            <h3>Edit Profile</h3>
             <?php 
                 if(isset($_SESSION['flash_message'])){
                     print '<p style="color: red;">';
@@ -17,10 +17,9 @@
                     }
             ?>
 
-            <input name="name" type="text" placeholder="Product Name">
-            <input name="quantity" type="number" placeholder="Product Quantity">
-            <input name="price" type="number" placeholder="Product Price">
-            <button type="submit" name="submit">Add</button>
+            <input name="username" type="text" placeholder="Username" value="<?php echo $_SESSION["username"] ?>">
+            <input name="email" type="email" placeholder="Email" value="<?php echo $_SESSION["email"] ?>">
+            <button type="submit" name="submit">Save</button>
     </div>
 </form>
     

@@ -38,8 +38,13 @@ class Order extends Db
              header("Location: ../dashboard.php");
              exit();
          }else{
-             $_SESSION['flash_message'] = 'Order deleted!';
-             header("Location: ../dashboard.php");
+            if($_SESSION["roles_id"] == 2){
+                $_SESSION['flash_message'] = 'Order deleted!';
+                header("Location: ../dashboard.php");
+            }else{
+                $_SESSION['flash_message'] = 'Order canceled!';
+                header("Location: ../shop.php");
+            }
              exit();
          }
  }
